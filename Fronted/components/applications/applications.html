@@ -1,0 +1,99 @@
+<div class="applications-premium-container">
+    <div class="applications-main-grid">
+        <!-- Main Discovery Feed -->
+        <div class="discovery-feed-section">
+            <div class="feed-header-premium glass">
+                <div class="header-content">
+                    <h3>Job Discovery Feed</h3>
+                    <p>Live matches from global job boards</p>
+                </div>
+                <button class="btn-primary-premium mini" id="refresh-jobs-btn">
+                    <span>Scan New Jobs</span>
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="feed-controls glass">
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="job-search-input" placeholder="Search discovered jobs...">
+                </div>
+                <div class="filter-chips">
+                    <button class="filter-chip active" data-filter="all">All Jobs</button>
+                    <button class="filter-chip" data-filter="HighMatch">High Match</button>
+                    <button class="filter-chip" data-filter="Remote">Remote Only</button>
+                    <button class="filter-chip" data-filter="Arbeitnow">Arbeitnow</button>
+                    <button class="filter-chip" data-filter="JSearch">JSearch</button>
+                    <button class="filter-chip" data-filter="Applied"
+                        style="border-color: rgba(16, 185, 129, 0.4); color: #10B981;">
+                        Applied
+                    </button>
+                    <button class="filter-chip" data-filter="Not applied"
+                        style="border-color: rgba(239, 68, 68, 0.4); color: #EF4444;">
+                        Not Applied
+                    </button>
+                </div>
+            </div>
+
+            <div class="premium-job-list" id="premium-job-list">
+                <!-- Dynamically populated by applications.js -->
+                <div class="feed-loading">
+                    <div class="spinner"></div>
+                    <p>Discovery Agent is syncing with global job boards...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar with Core Widgets -->
+        <aside class="agent-insights-sidebar">
+            <div class="glass insight-card daily-quota-card" id="sidebar-daily-quota" style="display: none;">
+                <div class="widget-header-premium">
+                    <h3>Daily Limit</h3>
+                    <span class="status-badge" id="quota-status">Active</span>
+                </div>
+                <div class="quota-visual">
+                    <svg viewBox="0 0 36 36" class="circular-chart-premium">
+                        <path class="circle-bg"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle progress-path" stroke-dasharray="0, 100" id="quota-circle-path"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <text x="18" y="20.35" class="percentage-text" id="quota-number">0/10</text>
+                    </svg>
+                </div>
+                <p class="quota-hint">Initiate applications to reach your daily goal.</p>
+            </div>
+
+            <div class="glass insight-card match-rate-card" id="sidebar-match-rate" style="display: none;">
+                <div class="widget-header-premium">
+                    <h3>Profile Match</h3>
+                    <span class="status-badge" id="match-quality">Good</span>
+                </div>
+                <div class="match-visual">
+                    <div class="match-percentage-large" id="avg-match-rate">0%</div>
+                    <div class="match-subtext">Avg. Profile Compatibility</div>
+                </div>
+                <div class="match-bar-container">
+                    <div class="match-bar-fill" id="match-bar-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <!-- <div class="glass insight-card agent-summary-card">
+                <h3>Agent Status</h3>
+                <div class="agent-mini-status">
+                    <div class="agent-avatar-small">
+                        <div class="agent-pulse"></div>
+                    </div>
+                    <div class="status-info">
+                        <span class="status-label">Discovery Agent</span>
+                    </div>
+                </div>
+            </div> -->
+        </aside>
+    </div>
+</div>

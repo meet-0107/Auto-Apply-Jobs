@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+
+  <!-- Background (Rounded Square) -->
+  <rect x="0" y="0" width="512" height="512" rx="120" ry="120" fill="#3B82F6"></rect>
+
+  <!-- Icon (Stack Layers) -->
+  <g stroke="white" stroke-width="18" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- Top Layer -->
+    <path d="M256 140 L120 210 L256 280 L392 210 Z"></path>
+    
+    <!-- Middle Layer -->
+    <path d="M120 270 L256 340 L392 270"></path>
+    
+    <!-- Bottom Layer -->
+    <path d="M120 330 L256 400 L392 330"></path>
+    
+  </g>
+
+</svg>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autly - Authentication</title>
+    <link rel="icon" type="image/svg+xml" href="/asset/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Abstract Shapes for Background -->
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        
+        <div class="auth-box glass-panel">
+            <div class="auth-header">
+                <div class="logo">
+                    <img src="/asset/logo.svg" alt="Autly" width="32" height="32" onerror="this.style.display='none'">
+                    <span>Autly</span>
+                </div>
+                <h2 id="auth-title">Welcome Back</h2>
+                <p id="auth-subtitle">Log in to continue automating your job search.</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form active">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" id="login-btn">Log In</button>
+                <div class="auth-footer">
+                    New user? <a href="#" id="show-signup">Sign Up here</a>
+                </div>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signup-form" class="auth-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="signup-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" id="signup-btn">Sign Up</button>
+                <div class="auth-footer">
+                    Already have an account? <a href="#" id="show-login">Log In here</a>
+                </div>
+            </form>
+            
+            <div id="auth-message" class="auth-message"></div>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* interview.css */
+
+.interview-container {
+    background: linear-gradient(135deg, rgba(30, 30, 40, 0.8), rgba(20, 20, 30, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.avatar-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.avatar-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99,102,241,0.8) 0%, rgba(99,102,241,0) 70%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease, width 0.1s ease, height 0.1s ease;
+}
+
+/* Animations based on state */
+.is-listening .avatar-glow {
+    opacity: 0.5;
+    animation: pulse-listen 2s infinite ease-in-out;
+}
+
+.is-speaking .avatar-glow {
+    opacity: 0.8;
+    background: radial-gradient(circle, rgba(139,92,246,0.8) 0%, rgba(139,92,246,0) 70%);
+    /* We'll control size via JS based on audio volume, but provide a fallback */
+    animation: pulse-speak 0.5s infinite alternate ease-in-out;
+}
+
+@keyframes pulse-listen {
+    0% { width: 150px; height: 150px; }
+    50% { width: 170px; height: 170px; }
+    100% { width: 150px; height: 150px; }
+}
+
+@keyframes pulse-speak {
+    0% { width: 160px; height: 160px; }
+    100% { width: 190px; height: 190px; }
+}
+
+.transcript-message {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    line-height: 1.4;
+}
+
+.msg-ai {
+    background: rgba(99, 102, 241, 0.1);
+    border-left: 3px solid #6366f1;
+}
+
+.msg-user {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid #10b981;
+}

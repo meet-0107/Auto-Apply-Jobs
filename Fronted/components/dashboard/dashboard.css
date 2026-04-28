@@ -1,0 +1,373 @@
+/* Grid Layout */
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.metrics-row .glass {
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.card-label small {
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.metric-value {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.metric-value .number {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.trend {
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.trend.up {
+    color: var(--accent-green);
+}
+
+/* Agent Status Widget */
+.agent-status-widget {
+    display: flex;
+    align-items: center;
+}
+
+.agent-pulse-indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.agent-pulse-indicator.active {
+    background: var(--accent-green);
+    animation: dashboard-pulse-green 2s infinite;
+}
+
+.agent-pulse-indicator.deactive {
+    background: var(--accent-red);
+    animation: dashboard-pulse-red 2s infinite;
+}
+
+@keyframes dashboard-pulse-green {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+@keyframes dashboard-pulse-red {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 12px rgba(239, 68, 68, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+/* Application Queue */
+.application-queue-card {
+    flex: 1;
+    padding: 30px;
+}
+
+.card-header h3 {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.card-header small {
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.card-stack-container {
+    position: relative;
+    height: 350px;
+    margin-top: 20px;
+}
+
+.proposal-card {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.proposal-card.active {
+    z-index: 5;
+    transform: translateY(0) scale(1);
+}
+
+.proposal-card.stack-1 {
+    z-index: 4;
+    transform: translateY(15px) scale(0.97);
+    opacity: 0.8;
+}
+
+.proposal-card.stack-2 {
+    z-index: 3;
+    transform: translateY(30px) scale(0.94);
+    opacity: 0.6;
+}
+
+.proposal-card.stack-3 {
+    z-index: 2;
+    transform: translateY(45px) scale(0.91);
+    opacity: 0.4;
+}
+
+.proposal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.job-meta p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.tag.upwork {
+    background: rgba(55, 160, 0, 0.1);
+    color: #37a000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.proposal-content {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border-left: 4px solid var(--primary);
+}
+
+.btn-text {
+    background: #e9ecef;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.btn.submit {
+    background: var(--primary);
+    color: white;
+}
+
+.btn.reject {
+    background: #fee2e2;
+    color: var(--accent-red);
+    border: 1px solid #fecaca;
+}
+
+/* Portfolio Health visualization */
+.health-visualization {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.circular-chart {
+    width: 80px;
+}
+
+.circular-svg {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+}
+
+.circle {
+    fill: none;
+    stroke: var(--accent-blue);
+    stroke-width: 3.8;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.3s ease;
+}
+
+/* Job Discovery Widget Styles */
+.job-discovery {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 24px;
+}
+
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.job-discovery h3 {
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.agent-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    position: relative;
+}
+
+.agent-status-dot.active {
+    background: var(--accent-green);
+    box-shadow: 0 0 10px var(--accent-green);
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.discovered-jobs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.job-item {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.job-item:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.job-item .job-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.job-item .job-company {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.job-apply-link {
+    display: block;
+    margin-top: 15px;
+    padding: 8px;
+    text-align: center;
+    background: rgba(38, 166, 154, 0.05);
+    color: var(--primary-teal);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.job-apply-link:hover {
+    background: var(--primary-teal);
+    color: white;
+}
+
+.job-tag {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    background: rgba(38, 166, 154, 0.1);
+    color: var(--primary-teal);
+    border-radius: 6px;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.loading-jobs {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}

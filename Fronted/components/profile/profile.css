@@ -1,0 +1,204 @@
+/* Profile View Styles */
+.profile-view {
+    padding: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.profile-card {
+    padding: 48px;
+    max-width: 900px;
+    margin: 40px auto;
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-md);
+}
+
+.salary-range {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px 15px;
+    border-radius: 12px;
+}
+
+.salary-range input {
+    width: 120px;
+    padding: 8px 12px;
+}
+
+.salary-range span {
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* Integrated Profile Header */
+.profile-header-integrated {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-main);
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    margin-bottom: 32px;
+}
+
+.profile-title-group h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.profile-title-group .subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.profile-health-integrated {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 8px 16px;
+    border-radius: 14px;
+}
+
+.circular-chart-small {
+    width: 45px;
+}
+
+.circular-chart-small .percentage {
+    font-size: 0.6em;
+}
+
+.health-info-small {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.health-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-transform: uppercase;
+}
+
+#health-tip {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.8);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(38, 166, 154, 0.08);
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: var(--accent-red, #ef4444);
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.btn.submit {
+    padding: 14px 28px;
+    background: var(--primary);
+    color: white;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn.submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Circular Chart Styles */
+.circular-svg {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    max-height: 250px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: var(--border-light);
+    stroke-width: 3.8;
+}
+
+.circle {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 3.8;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.3s ease;
+}
+
+.percentage {
+    fill: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.required-mark {
+    color: var(--accent-red);
+    margin-left: 2px;
+}
+
+.optional-mark {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-left: 4px;
+}

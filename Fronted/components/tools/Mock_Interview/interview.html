@@ -1,0 +1,39 @@
+<div class="glass interview-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px; padding: 2rem; position: relative; overflow: hidden;">
+    
+    <div class="interview-header" style="text-align: center; margin-bottom: 2rem; z-index: 2;">
+        <h2>Mock Interview</h2>
+        <p>Real-time AI voice interviewer</p>
+    </div>
+
+    <!-- Visualizer / Avatar -->
+    <div class="avatar-container" style="position: relative; width: 150px; height: 150px; margin: 0 auto 2rem; z-index: 2;">
+        <div class="avatar-glow" id="avatarGlow"></div>
+        <div class="avatar-circle">
+            <svg viewBox="0 0 24 24" width="60" height="60" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="22"></line>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Status Text -->
+    <div class="status-indicator" id="interviewStatus" style="font-weight: 500; margin-bottom: 1.5rem; color: #a1a1aa; z-index: 2;">
+        Ready to start
+    </div>
+
+    <!-- Controls -->
+    <div class="controls" style="z-index: 2; display: flex; gap: 1rem;">
+        <button id="startInterviewBtn" class="btn primary-btn" style="padding: 0.75rem 1.5rem; font-weight: bold; border-radius: 9999px;">
+            Start Interview
+        </button>
+        <button id="endInterviewBtn" class="btn" style="padding: 0.75rem 1.5rem; font-weight: bold; border-radius: 9999px; background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.5); display: none;">
+            End Interview
+        </button>
+    </div>
+
+    <!-- Transcript / Output area -->
+    <div class="transcript-area" id="transcriptArea" style="margin-top: 2rem; width: 100%; max-width: 600px; max-height: 200px; overflow-y: auto; text-align: left; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; font-size: 0.9rem; z-index: 2;">
+        <p style="color: #a1a1aa; font-style: italic;">Transcript will appear here...</p>
+    </div>
+</div>

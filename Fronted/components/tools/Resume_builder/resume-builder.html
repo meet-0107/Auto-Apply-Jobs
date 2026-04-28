@@ -1,0 +1,204 @@
+<div class="rb-workspace">
+    <!-- Slim Control Sidebar -->
+    <aside class="rb-controls glass">
+        <div class="rb-brand">
+        </div>
+
+        <nav class="rb-steps-nav">
+            <button class="rb-nav-tab active" data-step="personal" title="Personal Info">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Info</span>
+            </button>
+            <button class="rb-nav-tab" data-step="summary" title="Summary">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <span>Bio</span>
+                </div>
+            </button>
+            <button class="rb-nav-tab" data-step="experience" title="Experience">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                <span>Work</span>
+            </button>
+            <button class="rb-nav-tab" data-step="education" title="Education">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+                <span>Edu</span>
+            </button>
+            <button class="rb-nav-tab" data-step="skills" title="Skills">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                    <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                </svg>
+                <span>Skills</span>
+            </button>
+            <button class="rb-nav-tab" data-step="projects" title="Projects">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Apps</span>
+            </button>
+        </nav>
+
+        <div class="rb-utility-nav">
+            <button class="btn-util" id="rb-sync-profile" title="Sync Profile">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M23 4v6h-6M1 20v-6h6"></path>
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                </svg>
+            </button>
+            <button class="btn-util" id="rb-reset-draft" title="Reset">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Editor Column -->
+    <main class="rb-editor-area">
+        <header class="editor-header">
+            <div class="editor-title">
+                <h2 id="current-step-label">Personal Information</h2>
+                <p>Let's start with your contact details</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-outline-premium mini" id="rb-save-draft">Save Draft</button>
+                <button class="btn-primary-premium mini" id="rb-download-pdf">Export PDF</button>
+            </div>
+        </header>
+
+        <div class="editor-content-scroll">
+            <div class="rb-form-stack">
+                <!-- Step: Personal -->
+                <div id="rb-step-personal" class="rb-step-panel active">
+                    <div class="form-row">
+                        <div class="field-group">
+                            <label>Full Name</label>
+                            <input type="text" id="rb-full-name" placeholder="Enter your full name">
+                        </div>
+                        <div class="field-group">
+                            <label>Professional Title</label>
+                            <input type="text" id="rb-job-title" placeholder="Enter your job title">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="field-group">
+                            <label>Email</label>
+                            <input type="email" id="rb-email" placeholder="Enter your email">
+                        </div>
+                        <div class="field-group">
+                            <label>Phone</label>
+                            <input type="tel" id="rb-phone" placeholder="Enter your phone number">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="field-group">
+                            <label>Location</label>
+                            <input type="text" id="rb-location" placeholder="City, State">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="field-group">
+                            <label>LinkedIn</label>
+                            <input type="url" id="rb-linkedin" placeholder="linkedin.com/in/username">
+                        </div>
+                        <div class="field-group">
+                            <label>Portfolio</label>
+                            <input type="url" id="rb-portfolio" placeholder="github.com/username">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step: Summary -->
+                <div id="rb-step-summary" class="rb-step-panel">
+                    <div class="field-group">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                            <label style="margin: 0;">Professional Bio</label>
+                            <button id="btn-generate-bio" class="btn-primary-premium mini"
+                                style="background: linear-gradient(135deg, #a855f7, #3b82f6); border:none; padding: 4px 10px; gap: 4px; display: flex; align-items: center; color: white; cursor: pointer;">
+                                <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2"
+                                    fill="none">
+                                    <path
+                                        d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83">
+                                    </path>
+                                </svg>
+                                Generate using AI
+                            </button>
+                        </div>
+                        <textarea id="rb-summary" rows="10"
+                            placeholder="Describe your career achievements and goals..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Step: Experience -->
+                <div id="rb-step-experience" class="rb-step-panel">
+                    <div id="rb-experience-list" class="dynamic-list"></div>
+                    <button class="btn-add-modern" id="rb-add-experience">+ Add Experience</button>
+                </div>
+
+                <!-- Step: Education -->
+                <div id="rb-step-education" class="rb-step-panel">
+                    <div id="rb-education-list" class="dynamic-list"></div>
+                    <button class="btn-add-modern" id="rb-add-education">+ Add Education</button>
+                </div>
+
+                <!-- Step: Skills -->
+                <div id="rb-step-skills" class="rb-step-panel">
+                    <div class="field-group">
+                        <label>Primary Expertise</label>
+                        <input type="text" id="rb-primary-skills" placeholder="Python, React, SQL...">
+                    </div>
+                    <div class="field-group">
+                        <label>Secondary / Tools</label>
+                        <input type="text" id="rb-secondary-skills" placeholder="Docker, Git, Figma...">
+                    </div>
+                </div>
+
+                <!-- Step: Projects -->
+                <div id="rb-step-projects" class="rb-step-panel">
+                    <div id="rb-projects-list" class="dynamic-list"></div>
+                    <button class="btn-add-modern" id="rb-add-project">+ Add Project</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Preview Column -->
+    <section class="rb-preview-area">
+        <div class="preview-controls">
+            <div class="template-selector">
+                <span>Template:</span>
+                <select id="rb-template-select">
+                    <option value="minimal">Minimal Professional</option>
+                    <option value="modern">Modern Creative</option>
+                    <option value="classic">Classic Executive</option>
+                    <option value="sidebar">Sleek Sidebar</option>
+                    <option value="tech">Modern Tech (Dark)</option>
+                    <option value="compact">Compact Grid</option>
+                </select>
+            </div>
+        </div>
+        <div class="paper-viewport">
+            <div id="resume-preview-canvas" class="resume-paper minimal">
+                <!-- Content via JS -->
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autly</title>
+    <link rel="icon" type="image/svg+xml" href="/asset/logo.svg">
+    <link rel="stylesheet" href="style.css">
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="components/dashboard/dashboard.css">
+    <link rel="stylesheet" href="components/profile/profile.css">
+    <link rel="stylesheet" href="components/settings/settings.css">
+    <link rel="stylesheet" href="components/applications/applications.css">
+    <link rel="stylesheet" href="components/tools/Resume_chat/resume-chat.css">
+    <link rel="stylesheet" href="components/tools/Resume_builder/resume-builder.css">
+    <link rel="stylesheet" href="components/feedback/feedback.css">
+    <link rel="stylesheet" href="components/tools/Mock_Interview/interview.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo-icon" style="background: transparent; padding: 0;">
+                    <img src="/asset/logo.svg" alt="Autly Logo" width="40" height="40" style="display: block;">
+                </div>
+                <h1>Autly</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-view="dashboard">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-view="profile">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <div class="nav-text">
+                        <span>Profile</span>
+                        <small>Portfolio completion</small>
+                        <div class="progress-bar-small">
+                            <div class="progress-fill" style="width: 0%;"></div>
+                        </div>
+                        <span class="percentage">0%</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item" data-view="settings">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-dashboard">
+            <header class="top-header">
+                <div class="page-title">
+                    <h2 id="current-view-title">Dashboard</h2>
+                </div>
+                <div class="header-actions">
+                    <div class="header-status" id="header-apps-btn" style="cursor: pointer;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        <span>Applications</span>
+                    </div>
+
+                    <div class="dropdown">
+                        <div class="header-status dropdown-trigger">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                </path>
+                            </svg>
+                            <span>Tools</span>
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-left: 4px; opacity: 0.5;">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="#" class="tool-link" data-view="resume-builder">Resume Builder</a>
+                            <a href="#" class="tool-link" data-view="resume-chat">Chat with Resume</a>
+                            <a href="#" class="tool-link" data-view="interview">Mock Interview</a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="dropdown profile-dropdown" style="margin-left: 10px;">
+                        <div class="dropdown-trigger" style="display: flex; align-items: center; gap: 8px;">
+                            <div class="profile-avatar" id="header-avatar"
+                                style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">
+                                U
+                            </div>
+                            <span id="header-user-name">User</span>
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.5;">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </div>
+                        <div class="dropdown-content" style="right: 0; left: auto; min-width: 150px;">
+                            <a href="#" class="nav-item-link" data-view="profile">Profile</a>
+                            <a href="#" class="nav-item-link" data-view="settings">Settings</a>
+                            <div class="dropdown-divider"
+                                style="height: 1px; background: var(--border-light); margin: 4px 0;"></div>
+                            <a href="#" id="logout-btn" style="color: var(--accent-red);">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard View -->
+            <div id="dashboard-view" class="view-container">
+                <div class="layout-main-flex" id="dashboard-section">
+                    <div class="content-left">
+                        <div class="metrics-row">
+                            <div class="glass" id="card-applications-total" style="display: none;">
+                                <div class="card-label">Applications <small>Total</small></div>
+                                <div class="metric-value">
+                                    <span class="number" id="total-applications-count">0</span>
+                                    <span class="trend up">Live</span>
+                                </div>
+                            </div>
+                            <div class="glass" id="card-match-profile" style="display: none; cursor: pointer;">
+                                <div class="card-label">Match Profile <small>Total</small></div>
+                                <div class="metric-value">
+                                    <span class="number" id="match-profile-count">0</span>
+                                    <span class="trend up">High Match</span>
+                                </div>
+                            </div>
+                            <div class="glass" id="card-automation-app" style="display: none; cursor: pointer;">
+                                <div class="card-label">Automation Application</div>
+                                <div class="metric-value">
+                                    <span class="number" id="automation-app-count">0</span>
+                                    <span class="trend up">Auto</span>
+                                </div>
+                            </div>
+                            <div class="glass" id="agent-status-card" style="cursor: pointer;"
+                                title="Save your profile to enable agent">
+                                <div class="card-label">Agent Status</div>
+                                <div class="metric-value agent-status-widget">
+                                    <div class="agent-pulse-indicator deactive" id="dashboard-agent-pulse"></div>
+                                    <span class="number" id="dashboard-agent-text"
+                                        style="font-size: 1.5rem; margin-left: 12px; color: var(--accent-red);">Deactive</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Profile View -->
+            <div id="profile-view" class="view-container" style="display: none;">
+                <section class="glass profile-card" id="profile-section">
+                    <div class="profile-header-integrated">
+                        <div class="profile-title-group">
+                            <h3><svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                                    fill="none">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg> Profile Details</h3>
+                            <p class="subtitle">Keep your information updated for better job matches.</p>
+                        </div>
+                        <div class="profile-health-integrated">
+                            <div class="circular-chart-small">
+                                <svg viewBox="0 0 36 36" class="circular-svg">
+                                    <path class="circle-bg"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle" stroke-dasharray="0, 100" id="health-circle"
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="18" y="20.35" class="percentage" id="health-percentage-text">0%</text>
+                                </svg>
+                            </div>
+                            <div class="health-info-small">
+                                <span class="health-label">Completion</span>
+                                <small id="health-tip">Fill details to reach 100%.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-form">
+                        <div class="form-group">
+                            <label>Full Name <span class="required-mark">*</span></label>
+                            <input type="text" id="profile-fullname" class="track-completion"
+                                placeholder="Enter full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email <span class="required-mark">*</span></label>
+                            <input type="email" id="profile-email" class="track-completion" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label>LinkedIn URL <span class="optional-mark">(optional)</span></label>
+                            <input type="url" id="profile-linkedin" class="track-completion" placeholder="LinkedIn URL">
+                        </div>
+                        <div class="form-group">
+                            <label>GitHub URL <span class="optional-mark">(optional)</span></label>
+                            <input type="url" id="profile-github" class="track-completion" placeholder="GitHub URL">
+                        </div>
+                        <div class="form-group">
+                            <label>Portfolio URL <span class="optional-mark">(optional)</span></label>
+                            <input type="url" id="profile-portfolio" class="track-completion"
+                                placeholder="Portfolio URL">
+                        </div>
+                        <div class="form-group">
+                            <label>Job Type <span class="required-mark">*</span></label>
+                            <select id="profile-jobtype" class="track-completion">
+                                <option value="">Select Job Type</option>
+                                <option>Remote</option>
+                                <option>Hybrid</option>
+                                <option>On-site</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Location <span class="required-mark">*</span></label>
+                            <input type="text" id="profile-location" class="track-completion"
+                                placeholder="City, Country">
+                        </div>
+                        <div class="form-group">
+                            <label>Experience Level <span class="required-mark">*</span></label>
+                            <select id="profile-experience-level" class="track-completion">
+                                <option value="">Select Level</option>
+                                <option value="Fresher">Fresher</option>
+                                <option value="Junior">Junior (1-2 years)</option>
+                                <option value="Mid-Level">Mid-Level (3-5 years)</option>
+                                <option value="Senior">Senior (5+ years)</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="primary-skills-wrapper">
+                            <label>Primary Skills <span class="required-mark">*</span></label>
+                            <div style="position: relative; display: flex; align-items: center;">
+                                <input type="text" id="profile-primary-skills-input" placeholder="Enter your skills"
+                                    style="flex: 1; margin: 0; padding-right: 48px;">
+                                <button type="button" id="add-skill-btn"
+                                    style="position: absolute; right: 6px; width: 32px; height: 32px; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer; transition: opacity 0.2s;"
+                                    onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">+</button>
+                            </div>
+                            <div id="skills-container"
+                                style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;"></div>
+                            <input type="hidden" id="profile-primary-skills" class="track-completion">
+                        </div>
+                        <div class="form-group">
+                            <label>Achievements <span class="optional-mark">(optional)</span></label>
+                            <textarea id="profile-achievements" class="track-completion"
+                                placeholder="Describe your achievements"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Upload Resume <span class="required-mark">*</span></label>
+                            <input type="file" id="profile-resume" class="track-completion">
+                        </div>
+                        <div class="profile-actions" style="margin-top: 30px;">
+                            <button class="btn submit" id="save-profile-btn">Save Profile Details</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Applications View -->
+            <div id="applications-view" class="view-container" style="display: none;">
+                <div class="applications-premium-container">
+                    <div class="applications-main-grid">
+                        <!-- Main Discovery Feed -->
+                        <div class="discovery-feed-section">
+                            <div class="feed-header-premium glass">
+                                <div class="header-content">
+                                    <h3>Job Discovery Feed</h3>
+                                    <p>Live matches from global job boards</p>
+                                </div>
+                                <button class="btn-primary-premium mini" id="refresh-jobs-btn">
+                                    <span>Scan New Jobs</span>
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor"
+                                        stroke-width="2" fill="none">
+                                        <polyline points="23 4 23 10 17 10"></polyline>
+                                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="feed-controls glass">
+                                <div class="search-box">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor"
+                                        stroke-width="2" fill="none">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                    <input type="text" id="job-search-input" placeholder="Search discovered jobs...">
+                                </div>
+                                <div class="filter-chips">
+                                    <button class="filter-chip active" data-filter="all">All Jobs</button>
+                                    <button class="filter-chip" data-filter="HighMatch">High Match</button>
+                                    <button class="filter-chip" data-filter="Remote">Remote Only</button>
+                                    <button class="filter-chip" data-filter="Arbeitnow">Arbeitnow</button>
+                                    <button class="filter-chip" data-filter="JSearch">JSearch</button>
+                                    <button class="filter-chip" data-filter="Applied"
+                                        style="border-color: rgba(16, 185, 129, 0.4); color: #10B981;">
+                                        Applied
+                                    </button>
+                                    <button class="filter-chip" data-filter="Not applied"
+                                        style="border-color: rgba(239, 68, 68, 0.4); color: #EF4444;">
+                                        Not Applied
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="premium-job-list" id="premium-job-list">
+                                <!-- Dynamically populated by applications.js -->
+                                <div class="feed-loading">
+                                    <div class="spinner"></div>
+                                    <p>Discovery Agent is syncing with global job boards...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar with Core Widgets -->
+                        <aside class="agent-insights-sidebar">
+                            <div class="glass insight-card daily-quota-card" id="sidebar-daily-quota"
+                                style="display: none;">
+                                <div class="widget-header-premium">
+                                    <h3>Daily Limit</h3>
+                                </div>
+                                <div class="quota-visual">
+                                    <svg viewBox="0 0 36 36" class="circular-chart-premium">
+                                        <path class="circle-bg"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle progress-path" stroke-dasharray="0, 100"
+                                            id="quota-circle-path"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <text x="18" y="20.35" class="percentage-text" id="quota-number">0/10</text>
+                                    </svg>
+                                </div>
+                                <p class="quota-hint">Initiate applications to reach your daily goal.</p>
+                            </div>
+
+                            <div class="glass insight-card daily-quota-card" id="sidebar-match-rate"
+                                style="display: none;">
+                                <div class="widget-header-premium">
+                                    <h3>Profile Match</h3>
+                                    <span class="status-badge" id="match-quality">Good</span>
+                                </div>
+                                <div class="match-visual">
+                                    <div class="match-percentage-large" id="avg-match-rate">0%</div>
+                                    <div class="match-subtext">Avg. Profile Compatibility</div>
+                                </div>
+                                <div class="match-bar-container">
+                                    <div class="match-bar-fill" id="match-bar-fill" style="width: 0%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="glass insight-card agent-summary-card">
+                                <h3>Agent Status</h3>
+                                <div class="agent-mini-status">
+                                    <div class="agent-avatar-small">
+                                        <div class="agent-pulse"></div>
+                                    </div>
+                                    <div class="status-info">
+                                        <span class="status-label">Discovery Agent</span>
+                                        <span class="status-label online" id="agent-status-label">Online</span>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </aside>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resume Builder View -->
+            <div id="resume-builder-view" class="view-container" style="display: none;">
+                <!-- Loaded dynamically from resume-builder.html -->
+            </div>
+
+            <!-- Resume Chat View -->
+            <div id="resume-chat-view" class="view-container" style="display: none; height: calc(100vh - 80px);">
+                <!-- Loaded dynamically from resume-chat.html -->
+            </div>
+
+            <!-- Interview View -->
+            <div id="interview-view" class="view-container" style="display: none; height: calc(100vh - 80px);">
+                <!-- Loaded dynamically from interview.html -->
+            </div>
+
+            <!-- Settings View -->
+            <div id="settings-view" class="view-container" style="display: none;">
+                <div class="glass settings-card">
+                    <div class="card-header">
+                        <h3>General Settings</h3>
+                    </div>
+                    <div class="settings-options">
+                        <div class="form-group">
+                            <label>Dark Mode</label>
+                            <label class="switch">
+                                <input type="checkbox" id="dark-mode-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Notifications</label>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Component Scripts -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="components/dashboard/dashboard.js"></script>
+    <script src="components/profile/profile.js?v=2"></script>
+    <script src="components/settings/settings.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="components/applications/applications.js?v=4"></script>
+    <script src="components/tools/Resume_builder/resume-builder.js"></script>
+    <script src="components/tools/Resume_chat/resume-chat.js"></script>
+    <script src="components/tools/Mock_Interview/interview.js"></script>
+    <script src="components/feedback/feedback.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Feedback Component Container -->
+    <div id="feedback-container"></div>
+</body>
+
+</html>
